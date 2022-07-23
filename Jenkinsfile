@@ -36,10 +36,10 @@ pipeline {
                         ]
                     )
                 }
-                sh 'sudo /usr/bin/systemctl stop train-schedule'
-                sh 'sudo rm -rf /opt/train-schedule/*'
-                sh 'sudo unzip /tmp/trainSchedule.zip -d /opt/train-schedule'
-                sh 'sudo /usr/bin/systemctl start train-schedule'
+                sh 'sudo -S /usr/bin/systemctl stop train-schedule'
+                sh 'sudo -S rm -rf /opt/train-schedule/*'
+                sh 'sudo -S unzip /tmp/trainSchedule.zip -d /opt/train-schedule'
+                sh 'sudo -S /usr/bin/systemctl start train-schedule'
             }
         }
         stage('DeployToProduction') {
