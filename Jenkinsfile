@@ -3,19 +3,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Running build automationg-stage'
+                echo 'Running build automationg-prod'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing Stage steage'
+                echo 'Testing Stage prod'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploy Stage stage'
+                echo 'Deploy Stage prod'
             }
         }
 
